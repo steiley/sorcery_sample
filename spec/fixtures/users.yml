@@ -1,0 +1,16 @@
+## YAML Template.
+admin:
+  email: admin@hoge.com
+  crypted_password: $2a$10$IbkJ1rn8Js5AEgwC.NcCoOXHJwtco.sgcvS9mL/TsjvQNUdHWMwgq
+  salt: LMdeCrEf1uAxHhF9dbpA
+  admin: true
+user1:
+  email: user1@user.com
+  crypted_password: user1user1
+  salt: user1salt
+user2:
+  email: user2@user.com
+  crypted_password: user2user2
+  salt: user2salt
+
+    

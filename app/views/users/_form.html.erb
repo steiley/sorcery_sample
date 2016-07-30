@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group">
+      <span class="input-group-addon"><%= f.label :email %></span>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon"><%= f.label :password %></span>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+<div class="input-group">
+   <span class="input-group-addon"><%= f.label :password_confirmation %></span>
+   <%= f.password_field :password_confirmation, class: 'form-control' %>
+</div>  
+  <div class="input-group">
+    <span class="input-group-addon"><%= f.label :hobbies %></span>
+    <%= collection_check_boxes(:user, :hobby_ids, Hobby.all, :id, :name) do |h| %>
+      <%= h.label { h.check_box + h.text } %>
+    <% end %>
+  </div>
+<div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

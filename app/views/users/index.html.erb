@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+ <div class="panel panel-default">
+   <div class="panel-heading">
+Listing Users
+   </div>
+
+<div class="container">
+<table class="table">
+    <% if !@users.empty? ^%>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Hobbies</th>
+      <th></th>
+    </tr>
+  </thead>
+    <% end -%>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.hobbies.map(&:name).join(',') %></td>
+        <td>
+<% if can_update user -%>
+<%= link_to 'Edit', edit_user_path(user) %>
+<% end -%>
+        </td>
+        <td>
+<% if can_destroy user -%>
+  <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end -%>
+        </td>
+      </tr>
+<% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<% if can_create nil -%>
+<%= link_to 'New User', new_user_path %>
+<% end %>
+ </div>
+</div>

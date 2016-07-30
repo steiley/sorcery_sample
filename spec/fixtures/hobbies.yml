@@ -1,0 +1,16 @@
+## YAML Template.
+sports:
+    name: Sports
+shopping:
+    name: Shopping
+watching_movies:
+    name: Watching Movies
+reading_books:
+    name: Reading Books
+listening_music:
+    name: Listening Music
+websurfing:
+    name: Web Surfing
+outdoors:
+    name: Outdoors
+    
